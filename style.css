@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+}
+
+body{
+    height: 100vh;
+    background: rgb(242, 139, 13);
+    display: grid;
+    place-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+}
+
+.Board{
+    display: flex;
+    background-color: blue;
+    margin: 20%;
+
+}
