@@ -16,7 +16,6 @@ h1{
     display: flex;
     justify-content: center;
 }
-
 .Board{
     display: flex;
     background-color: blue;
