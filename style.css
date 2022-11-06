@@ -6,19 +6,54 @@
 
 body{
     height: 100vh;
-    background: rgb(242, 139, 13);
+    width: 100vw;
+    background: rgb(104, 58, 1);
     display: grid;
-    place-items: center;
+    place-items: center center;
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.Game-Body{
+    background: white;
+    width: 70vw;
+    height: 80%;
+}
+
 h1{
+    background: linear-gradient(#0b8f63, #29477e, #e90e0e);
     display: flex;
     justify-content: center;
+    color: rgb(239, 239, 5);
+    margin: 3%;
 }
-.Board{
-    display: flex;
-    background-color: blue;
-    margin: 20%;
 
+.Game-Board{
+    display: grid;
+    grid-template-columns: repeat(3, 4em);
+    grid-template-rows: repeat(3, 4em);
+    /* justify-content: space-between; */
+    grid-gap: 1vmin;
+    background-color: blue;
+    margin: 1% 1% 3% 1%;
+    padding: 10% 10% 10% 10%;
+
+}
+
+.cell{
+    background-color: rgb(227, 227, 15);
+    display: grid;
+    justify-content: space-between;
+    padding: 50%;
+    margin: 1%;
+    align-items: center;
+    font-size: medium;
+    font-weight: bold;
+}
+
+/* cell active here works when there is a click and 
+cell hover works when there is hover above */
+.cell:active, .cell:hover, .cell.winner{
+    cursor: pointer;
+    /* color:rgb(172, 172, 6); */
+    background: linear-gradient(#e90e0e, #c1edde );
 }
