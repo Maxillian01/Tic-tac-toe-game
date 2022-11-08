@@ -54,22 +54,60 @@ h1{
     padding: 1vmin;
     background: rgb(23, 1, 1);
     border-radius: 5%;
+    border: none;
     text-align: center;
     margin-left: 30vmin;
     margin-right: 30vmin;
+}
 
+
+/* note, the new popup hide class name was first named popup,
+ after designed, we remnamed it to "popup hide" and give it 
+ a css display value of "none". see the "popup hide" below. to 
+ see the difference rename the html class in the HTML from 
+ "popup hide" to "popup" */
+.popup{
+    background: linear-gradient(#29477e, #e90e0e); 
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    z-index: 2;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1em;
+    font-size: 10vmin;
+}
+
+.new-game{
+    padding: 0.5em 1em;
+    color: white;
+    background-color: rgb(81, 5, 5);
+    border-radius: 5%;
+    font-size: 0.6em;
+    border: none;
+}
+
+.message{
+    color: white;
+    text-align: center;
+    font-size: 1em;
+}
+
+.popup.hide{
+    display: none;
 }
 
 
 /* cell:hover is incharge of color change when the mouse 
 pointer hovers above a cell  */
-.cell:hover, .reset:hover, .cell.winner{
+.cell:hover, .reset:hover, .new-game:hover, .cell.winner{
     cursor: pointer;
-    /* color:rgb(172, 172, 6); */
     background: linear-gradient(#e90e0e, #2b11f1, #d46a6a );
 }
 
 /* cell:active is in charge of color change when there is a click */
-.cell:active, .reset:active{
+.cell:active, .new-game:active, .reset:active{
     background: linear-Gradient(#c1edde, #5c2f07);
 }
