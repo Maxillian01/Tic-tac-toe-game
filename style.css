@@ -1,59 +1,75 @@
 *{
     margin: 0;
     padding: 0;
-    /* box-sizing: border-box; */
+    box-sizing: border-box;
 }
 
 body{
     height: 100vh;
-    width: 100vw;
-    background: rgb(104, 58, 1);
-    display: grid;
-    place-items: center center;
-    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(#29477e, #e90e0e); 
+}
+ 
+html{
+    font-size: 18px;
 }
 
 .Game-Body{
-    background: white;
-    width: 70vw;
-    height: 80%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;   
 }
 
 h1{
-    background: linear-gradient(#0b8f63, #29477e, #e90e0e);
     display: flex;
     justify-content: center;
-    color: rgb(239, 239, 5);
-    margin: 3%;
+    color: rgb(214, 173, 8);
+    background: #251a6e;
+    margin-right: 0.5em;
+    
 }
 
-.Game-Board{
-    display: grid;
-    grid-template-columns: repeat(3, 4em);
-    grid-template-rows: repeat(3, 4em);
-    /* justify-content: space-between; */
-    grid-gap: 1vmin;
-    background-color: blue;
-    margin: 1% 1% 3% 1%;
-    padding: 10% 10% 10% 10%;
-
+.Container{
+    width: 70vmin;
+    height: 70vmin;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1vmin;
+    font-family: "permanent Marker", cursive;
 }
 
 .cell{
-    background-color: rgb(227, 227, 15);
-    display: grid;
-    justify-content: space-between;
-    padding: 50%;
-    margin: 1%;
-    align-items: center;
-    font-size: medium;
-    font-weight: bold;
+    background: rgb(192, 235, 74);
+    height: 22vmin;
+    width: 22vmin;
+    border-radius: 5%;
+    font-size: 40px;
+    text-align: center;
 }
 
-/* cell active here works when there is a click and 
-cell hover works when there is hover above */
-.cell:active, .cell:hover, .cell.winner{
+.reset{
+    font-size: 1em;
+    color: #dae90e;
+    margin-top: 1.2vmin;
+    padding: 1vmin;
+    background: rgb(23, 1, 1);
+    border-radius: 5%;
+    text-align: center;
+    margin-left: 30vmin;
+    margin-right: 30vmin;
+
+}
+
+
+/* cell:hover is incharge of color change when the mouse 
+pointer hovers above a cell  */
+.cell:hover, .reset:hover, .cell.winner{
     cursor: pointer;
     /* color:rgb(172, 172, 6); */
-    background: linear-gradient(#e90e0e, #c1edde );
+    background: linear-gradient(#e90e0e, #2b11f1, #d46a6a );
+}
+
+/* cell:active is in charge of color change when there is a click */
+.cell:active, .reset:active{
+    background: linear-Gradient(#c1edde, #5c2f07);
 }
