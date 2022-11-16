@@ -15,9 +15,6 @@ let winCondition = [
     [0,4,8],
     [2,4,6]
 ];
-// let options = ['', '', '', '', '', '', '', '', ''];
-// let currentPlayer = "X";
-// let running = false;
 
 // player "X" plays first
 let xTurn = true;
@@ -25,7 +22,9 @@ let count = 0;
 
 //Disable all Cells
 let disableCell = () => {
-    cell.forEach((element) => element.disabled = true);
+    cell.forEach((element) => {
+        element.disabled = true;
+    });
     //enable popup
     popup.classList.remove("hide");
 };
@@ -69,11 +68,10 @@ reset.addEventListener("click", () => {
 });
 
 
-
 // Win Logic 
 let winChecker = () => {
-    // loop through all win patterns
-    for(let i of winningPattern){
+    // loop through all win conditions
+    for(let i of winCondition){
         let[element1, element2, element3] = [
         cell[i[0]].innerText,
         cell[i[1]].innerText,
@@ -81,10 +79,11 @@ let winChecker = () => {
      ];
      //check if elements are filled 
      //if 3 empty elements are same and would  give win as would
-     if(element1 != '' && (element2 != '') && (element3 != '')){
-        if(element1 == element2 && element2 == element3){
+     if((element1 != '') && (element2 != '') && (element3 != '')){
+        if(element1 == element2 && element1 == element3){
             // if all 3 cells have same values, then pass the value to winFunction
             winFunction(element1)
+            // console.log("won")
         }
      }
     }
@@ -93,21 +92,21 @@ let winChecker = () => {
 // display "X/O" on click
 cell.forEach((element) => {
     element.addEventListener("click", () => {
-        if(xTurn){
-            xTurn = false;
+        if(xTurn == true){
         // Display X
             element.innerText = "X";
             element.disabled = true;
-        } else{
-            xTurn = true;
+            xTurn = false;
+        } else if(xTurn == false){
             // Display "O"
             element.innerText = "O";
-            element.disabled = ture;
+            element.disabled = true;
+            xTurn = true;
         }
         //Incremet count on each clicks
         count += 1;
         if(count === 9){
-            drawFunction();
+            drawFunction(); //it is a draw since there are total of 9 boxed
         }
         // Check for win on every click
         winChecker();
